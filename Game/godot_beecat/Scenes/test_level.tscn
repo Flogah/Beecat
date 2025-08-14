@@ -1,0 +1,157 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0svqrdftreet"]
+
+[ext_resource type="Texture2D" uid="uid://dxsghawsbnf5i" path="res://assets/art/sketch/PH_smallPlatform.png" id="1_eglq2"]
+[ext_resource type="PackedScene" uid="uid://1u0yeuryqvex" path="res://Scenes/player/player.tscn" id="2_dtjkg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iti4p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsyfn"]
+size = Vector2(32, 9)
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_left = -467.0
+offset_top = -288.0
+offset_right = 478.0
+offset_bottom = 243.0
+color = Color(0.601546, 0.733616, 0.891885, 1)
+
+[node name="Terrain" type="Node2D" parent="."]
+position = Vector2(0, 123)
+
+[node name="Floor" type="StaticBody2D" parent="Terrain"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Floor"]
+shape = SubResource("WorldBoundaryShape2D_iti4p")
+
+[node name="ColorRect" type="ColorRect" parent="Terrain/Floor"]
+offset_left = -408.0
+offset_right = 408.0
+offset_bottom = 68.0
+color = Color(0.226707, 0.226707, 0.226707, 1)
+
+[node name="Platforms" type="Node2D" parent="Terrain"]
+
+[node name="Platform" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(62, -41)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Platforms/Platform"]
+texture = ExtResource("1_eglq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Platform2" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(62, -83)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Platforms/Platform2"]
+texture = ExtResource("1_eglq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform2"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Platform3" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(62, -119)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Platforms/Platform3"]
+texture = ExtResource("1_eglq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform3"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Platform4" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(92, -41)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Platforms/Platform4"]
+texture = ExtResource("1_eglq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform4"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Platform5" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(92, -83)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Platforms/Platform5"]
+texture = ExtResource("1_eglq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform5"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Platform6" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(92, -119)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Platforms/Platform6"]
+texture = ExtResource("1_eglq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform6"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Platform7" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(121, -41)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Platforms/Platform7"]
+texture = ExtResource("1_eglq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform7"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Platform8" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(121, -83)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Platforms/Platform8"]
+texture = ExtResource("1_eglq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform8"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Platform9" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(121, -119)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Platforms/Platform9"]
+texture = ExtResource("1_eglq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform9"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Player" parent="." instance=ExtResource("2_dtjkg")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
