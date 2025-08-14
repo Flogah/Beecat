@@ -14,7 +14,15 @@ animations = [{
 "texture": ExtResource("2_6upyo")
 }],
 "loop": true,
-"name": &"fall",
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e41v5")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -35,14 +43,6 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_e41v5")
-}],
-"loop": true,
-"name": &"sit",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo61r"]
@@ -56,7 +56,7 @@ script = ExtResource("1_eo61r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -15)
 sprite_frames = SubResource("SpriteFrames_ca0mu")
-animation = &"fall"
+animation = &"falling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
