@@ -159,12 +159,12 @@ position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rsyfn")
 one_way_collision = true
 
-[node name="Player" parent="." instance=ExtResource("2_dtjkg")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_dtjkg")]
 position = Vector2(0, -123)
 jump_height = 100.0
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("focus")]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 zoom = Vector2(2, 2)
 limit_bottom = 50
 script = ExtResource("4_rsyfn")
-focus = NodePath("../Player")
+target = NodePath("../Player")
