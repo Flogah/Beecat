@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bsulxqoqvur8v"]
+
+[node name="smallSpace" type="Area2D"]
+collision_layer = 0
+collision_mask = 2

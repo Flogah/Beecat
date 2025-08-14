@@ -1,17 +1,15 @@
 extends CharacterBody2D
 
-
-
-
 const GRAVITY_MULTIPLIER = 2.0
 
 @export var move_speed = 200.0
 @export var jump_height:float = 50
 
+var can_move:bool = true
+var can_jump:bool = true
 var jump_velocity:float
 var bonus_jumps:int = 1 
 var jumps_left:int
-
 var jump_buffer_time: float = 0.1
 var jump_buffer_timer: float = -1
 var coyote_time:float = 0.1
@@ -36,6 +34,10 @@ func _process(delta: float) -> void:
 	if jump_buffer_timer > 0: jump_buffer_timer -= delta
 
 func _physics_process(delta: float) -> void:
+	handle_movement(delta)
+
+func handle_movement(delta):
+	if !can_move: return
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
@@ -43,9 +45,9 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		sprite.play("run")
 		if direction > 0:
-			sprite.flip_h = true
-		if direction < 0:
 			sprite.flip_h = false
+		if direction < 0:
+			sprite.flip_h = true
 		velocity.x = direction * move_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
@@ -72,15 +74,15 @@ func _physics_process(delta: float) -> void:
 		if jump_buffer_timer > 0:
 			jump()
 			jump_buffer_timer = -1
-		
 	
 	move_and_slide()
 
 func jump() -> void:
-	if can_jump(): velocity.y = jump_velocity
+	if jump_check(): velocity.y = jump_velocity
 	else: jump_buffer_timer = jump_buffer_time
 
-func can_jump() -> bool: 
+func jump_check() -> bool: 
+	if !can_jump: return false
 	if is_on_floor():
 		return true
 	elif coyote_timer > 0:
@@ -96,3 +98,9 @@ func can_jump() -> bool:
 		print("Jump Buffer time!")
 		return false
 	return false
+
+func victory():
+	can_jump = false
+	can_move = false
+	velocity = Vector2.ZERO
+	sprite.play("idle")

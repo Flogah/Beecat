@@ -1,31 +1,108 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0svqrdftreet"]
+[gd_scene load_steps=18 format=3 uid="uid://d0svqrdftreet"]
 
 [ext_resource type="Texture2D" uid="uid://dxsghawsbnf5i" path="res://assets/art/sketch/PH_smallPlatform.png" id="1_eglq2"]
 [ext_resource type="Texture2D" uid="uid://bis2fo7d6fwi2" path="res://assets/art/sketch/pixel_refsquare.png" id="1_rsyfn"]
 [ext_resource type="PackedScene" uid="uid://1u0yeuryqvex" path="res://Scenes/player/player.tscn" id="2_dtjkg"]
-[ext_resource type="Script" uid="uid://ltlnb01tibf5" path="res://Scenes/camera_2d.gd" id="4_rsyfn"]
+[ext_resource type="Texture2D" uid="uid://378kcbauda3s" path="res://assets/art/goose/goose_sitsNbarks.png" id="3_x6ft1"]
+[ext_resource type="Texture2D" uid="uid://23e3rxy528xw" path="res://assets/art/goose/goose_runs1.png" id="5_p51s7"]
+[ext_resource type="Texture2D" uid="uid://jvn0pcbxhgg5" path="res://assets/art/goose/goose_runs2.png" id="6_fbmvr"]
+[ext_resource type="Texture2D" uid="uid://b6h3cueqhdfj0" path="res://assets/art/goose/goose_slides.png" id="7_7alf0"]
+[ext_resource type="Texture2D" uid="uid://crpvuev2f0iln" path="res://assets/art/goose/goose_sits.png" id="7_xq3o0"]
+[ext_resource type="PackedScene" uid="uid://dd7vqd2f52l1v" path="res://Scenes/witch.tscn" id="8_8v7by"]
+[ext_resource type="PackedScene" uid="uid://ysfr3mmpn8kw" path="res://Scenes/camera.tscn" id="10_1rqgg"]
+[ext_resource type="PackedScene" uid="uid://bsulxqoqvur8v" path="res://Scenes/small_space.tscn" id="16_x6ft1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iti4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsyfn"]
 size = Vector2(32, 9)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w7ni"]
+size = Vector2(84, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwmob"]
+size = Vector2(52, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ihge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x6ft1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xq3o0")
+}],
+"loop": true,
+"name": &"bark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xq3o0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_p51s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fbmvr")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7alf0")
+}],
+"loop": true,
+"name": &"sliding",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p51s7"]
+size = Vector2(333, 64)
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="Background" type="Node2D" parent="."]
 position = Vector2(0, -123)
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
-offset_left = -467.0
-offset_top = -288.0
-offset_right = 478.0
-offset_bottom = 243.0
-color = Color(0.601546, 0.733616, 0.891885, 1)
-metadata/_edit_use_anchors_ = true
+[node name="ColorRect4" type="ColorRect" parent="Background"]
+offset_left = -1160.0
+offset_top = -374.0
+offset_right = 1243.0
+offset_bottom = 317.0
+color = Color(0.6, 0.733333, 0.890196, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 position = Vector2(-129, 23)
 texture = ExtResource("1_rsyfn")
+
+[node name="ColorRect2" type="ColorRect" parent="Background"]
+offset_left = 143.0
+offset_top = -117.0
+offset_right = 405.0
+offset_bottom = 130.0
+color = Color(0.258599, 0.474225, 0.435432, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Background"]
+offset_left = 307.0
+offset_top = -184.0
+offset_right = 483.0
+offset_bottom = -56.0
+color = Color(0.258599, 0.474225, 0.435432, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Background"]
+offset_left = 351.0
+offset_top = -267.0
+offset_right = 470.0
+offset_bottom = -132.0
+color = Color(0.258599, 0.474225, 0.435432, 1)
 
 [node name="Terrain" type="Node2D" parent="."]
 
@@ -35,8 +112,8 @@ texture = ExtResource("1_rsyfn")
 shape = SubResource("WorldBoundaryShape2D_iti4p")
 
 [node name="ColorRect" type="ColorRect" parent="Terrain/Floor"]
-offset_left = -408.0
-offset_right = 408.0
+offset_left = -1670.0
+offset_right = 1670.0
 offset_bottom = 68.0
 color = Color(0.226707, 0.226707, 0.226707, 1)
 
@@ -53,6 +130,91 @@ texture = ExtResource("1_eglq2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rsyfn")
+one_way_collision = true
+
+[node name="Platform10" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(203, -113)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="Terrain/Platforms/Platform10"]
+offset_left = -42.0
+offset_top = -12.0
+offset_right = 42.0
+offset_bottom = 10.0
+color = Color(0.437718, 0.596988, 0.316332, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform10"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7w7ni")
+one_way_collision = true
+
+[node name="Platform11" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(340, -148)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="Terrain/Platforms/Platform11"]
+offset_left = -42.0
+offset_top = -12.0
+offset_right = 42.0
+offset_bottom = 10.0
+color = Color(0.437718, 0.596988, 0.316332, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform11"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7w7ni")
+one_way_collision = true
+
+[node name="Platform12" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(256, -202)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="Terrain/Platforms/Platform12"]
+offset_left = -42.0
+offset_top = -12.0
+offset_right = 42.0
+offset_bottom = 10.0
+color = Color(0.437718, 0.596988, 0.316332, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform12"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7w7ni")
+one_way_collision = true
+
+[node name="Platform13" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(312, -57)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="Terrain/Platforms/Platform13"]
+offset_left = -42.0
+offset_top = -12.0
+offset_right = 42.0
+offset_bottom = 10.0
+color = Color(0.437718, 0.596988, 0.316332, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform13"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7w7ni")
+one_way_collision = true
+
+[node name="Platform14" type="StaticBody2D" parent="Terrain/Platforms"]
+position = Vector2(413, -274)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="Terrain/Platforms/Platform14"]
+offset_left = -42.0
+offset_top = -12.0
+offset_right = 42.0
+offset_bottom = 10.0
+color = Color(0.437718, 0.596988, 0.316332, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Platforms/Platform14"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7w7ni")
 one_way_collision = true
 
 [node name="Platform2" type="StaticBody2D" parent="Terrain/Platforms"]
@@ -159,12 +321,75 @@ position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rsyfn")
 one_way_collision = true
 
+[node name="Walls" type="Node2D" parent="Terrain"]
+
+[node name="Wall" type="StaticBody2D" parent="Terrain/Walls"]
+position = Vector2(-323, -102)
+rotation = -1.57079
+
+[node name="ColorRect" type="ColorRect" parent="Terrain/Walls/Wall"]
+offset_left = -26.0
+offset_top = -70.0
+offset_right = 26.0
+offset_bottom = 70.0
+color = Color(0.457486, 0.236628, 0.069208, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Walls/Wall"]
+shape = SubResource("RectangleShape2D_mwmob")
+
+[node name="Wall2" type="StaticBody2D" parent="Terrain/Walls"]
+position = Vector2(-458, -97)
+rotation = -1.57079
+
+[node name="ColorRect" type="ColorRect" parent="Terrain/Walls/Wall2"]
+offset_left = -26.0
+offset_top = -70.0
+offset_right = 26.0
+offset_bottom = 70.0
+color = Color(0.457486, 0.236628, 0.069208, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Walls/Wall2"]
+shape = SubResource("RectangleShape2D_mwmob")
+
+[node name="Wall3" type="StaticBody2D" parent="Terrain/Walls"]
+position = Vector2(-570, -108)
+rotation = -1.57079
+
+[node name="ColorRect" type="ColorRect" parent="Terrain/Walls/Wall3"]
+offset_left = -26.0
+offset_top = -70.0
+offset_right = 26.0
+offset_bottom = 70.0
+color = Color(0.457486, 0.236628, 0.069208, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Walls/Wall3"]
+shape = SubResource("RectangleShape2D_mwmob")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(215, -31)
+sprite_frames = SubResource("SpriteFrames_3ihge")
+animation = &"bark"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.684615
+
+[node name="Witch" parent="." instance=ExtResource("8_8v7by")]
+position = Vector2(409, -314)
+
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_dtjkg")]
-position = Vector2(0, -123)
+position = Vector2(0, -234)
 jump_height = 100.0
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-zoom = Vector2(2, 2)
-limit_bottom = 50
-script = ExtResource("4_rsyfn")
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target", "zoom_area_node") instance=ExtResource("10_1rqgg")]
+position = Vector2(0, -31)
 target = NodePath("../Player")
+zoom_area_node = NodePath("../ZoomAreas")
+
+[node name="ZoomAreas" type="Node2D" parent="."]
+
+[node name="smallSpace" parent="ZoomAreas" instance=ExtResource("16_x6ft1")]
+position = Vector2(-429, -37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoomAreas/smallSpace"]
+position = Vector2(-5.5, 0)
+shape = SubResource("RectangleShape2D_p51s7")

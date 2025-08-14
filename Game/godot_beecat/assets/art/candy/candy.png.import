@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du1k0q1766ed4"
-path="res://.godot/imported/cat_scared.png-4c01c28e0e3a78eef0a954708bed2cb4.ctex"
+uid="uid://bmfht4wap8qjm"
+path="res://.godot/imported/candy.png-08e2eddda2c81d58484f2ed842e77419.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/cat/cat_scared.png"
-dest_files=["res://.godot/imported/cat_scared.png-4c01c28e0e3a78eef0a954708bed2cb4.ctex"]
+source_file="res://assets/art/candy/candy.png"
+dest_files=["res://.godot/imported/candy.png-08e2eddda2c81d58484f2ed842e77419.ctex"]
 
 [params]
 

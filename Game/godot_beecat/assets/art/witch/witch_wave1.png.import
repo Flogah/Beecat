@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du1k0q1766ed4"
-path="res://.godot/imported/cat_scared.png-4c01c28e0e3a78eef0a954708bed2cb4.ctex"
+uid="uid://b3iib0tmo808e"
+path="res://.godot/imported/witch_wave1.png-4cd09b6494033c18aefe85fdbc6d5225.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/cat/cat_scared.png"
-dest_files=["res://.godot/imported/cat_scared.png-4c01c28e0e3a78eef0a954708bed2cb4.ctex"]
+source_file="res://assets/art/witch/witch_wave1.png"
+dest_files=["res://.godot/imported/witch_wave1.png-4cd09b6494033c18aefe85fdbc6d5225.ctex"]
 
 [params]
 

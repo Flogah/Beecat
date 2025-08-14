@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://dd7vqd2f52l1v"]
+
+[ext_resource type="Script" uid="uid://018643xj4bxl" path="res://Scenes/witch.gd" id="1_hjh8c"]
+[ext_resource type="Texture2D" uid="uid://daqenq3dxca7a" path="res://assets/art/witch/witch_candy.png" id="2_p42pi"]
+[ext_resource type="Texture2D" uid="uid://hbbrmrk8kv8g" path="res://assets/art/witch/witch_sits.png" id="3_whpry"]
+[ext_resource type="Texture2D" uid="uid://c80xkceouaf41" path="res://assets/art/witch/witch_blink.png" id="4_l7v3h"]
+[ext_resource type="Texture2D" uid="uid://b3iib0tmo808e" path="res://assets/art/witch/witch_wave1.png" id="5_w358o"]
+[ext_resource type="Texture2D" uid="uid://dxbvxjwg13fax" path="res://assets/art/witch/witch_wave2.png" id="6_wv0bi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2yvf5"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("3_whpry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p42pi")
+}],
+"loop": false,
+"name": &"give_candy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 8.0,
+"texture": ExtResource("3_whpry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l7v3h")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_w358o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wv0bi")
+}],
+"loop": true,
+"name": &"wave",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq3o0"]
+size = Vector2(28, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjh8c"]
+radius = 125.399
+
+[node name="Witch" type="Node2D"]
+script = ExtResource("1_hjh8c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2yvf5")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CandyArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CandyArea"]
+position = Vector2(6, 9)
+shape = SubResource("RectangleShape2D_xq3o0")
+
+[node name="WavingArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WavingArea"]
+position = Vector2(6, 9)
+shape = SubResource("CircleShape2D_hjh8c")
+
+[connection signal="body_entered" from="CandyArea" to="." method="_on_candy_area_body_entered"]
+[connection signal="body_entered" from="WavingArea" to="." method="_on_waving_area_body_entered"]
+[connection signal="body_exited" from="WavingArea" to="." method="_on_waving_area_body_exited"]

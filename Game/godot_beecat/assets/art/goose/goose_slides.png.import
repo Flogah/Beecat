@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du1k0q1766ed4"
-path="res://.godot/imported/cat_scared.png-4c01c28e0e3a78eef0a954708bed2cb4.ctex"
+uid="uid://b6h3cueqhdfj0"
+path="res://.godot/imported/goose_slides.png-e835783d8c0e32c0d5487b654bb81182.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/cat/cat_scared.png"
-dest_files=["res://.godot/imported/cat_scared.png-4c01c28e0e3a78eef0a954708bed2cb4.ctex"]
+source_file="res://assets/art/goose/goose_slides.png"
+dest_files=["res://.godot/imported/goose_slides.png-e835783d8c0e32c0d5487b654bb81182.ctex"]
 
 [params]
 

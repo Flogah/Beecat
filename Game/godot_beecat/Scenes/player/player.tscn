@@ -1,17 +1,27 @@
 [gd_scene load_steps=9 format=3 uid="uid://1u0yeuryqvex"]
 
 [ext_resource type="Script" uid="uid://cbp07give27kv" path="res://Scenes/player/player.gd" id="1_eo61r"]
-[ext_resource type="Texture2D" uid="uid://bsvd5fihruwim" path="res://assets/art/cat/cat_falls.png" id="2_6upyo"]
-[ext_resource type="Texture2D" uid="uid://difxcxmftma5q" path="res://assets/art/cat/cat_runs2.png" id="2_mxepk"]
-[ext_resource type="Texture2D" uid="uid://cvjm4h3lkkdbr" path="res://assets/art/cat/cat_runs1.png" id="3_ca0mu"]
-[ext_resource type="Texture2D" uid="uid://bsmf233c4fcgx" path="res://assets/art/cat/cat_sits.png" id="3_e41v5"]
-[ext_resource type="Texture2D" uid="uid://bh3gxgqb4xaqp" path="res://assets/art/cat/cat_jumps.png" id="3_xxarj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8p05u"]
+load_path = "res://.godot/imported/cat_falls.png-9d3746bdb6d5ee4a77b08be860b9782f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eo61r"]
+load_path = "res://.godot/imported/cat_sits.png-f751f4ffae0d6c95cfa0f4897ec6c171.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mxepk"]
+load_path = "res://.godot/imported/cat_jumps.png-3d7d13db780b06ada409e69e183246d7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e41v5"]
+load_path = "res://.godot/imported/cat_runs2.png-d3a8de1ebc532b3878bd029d67b68d0c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ca0mu"]
+load_path = "res://.godot/imported/cat_runs1.png-2002d013fd976e47c6c068423e856b1e.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ca0mu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6upyo")
+"texture": SubResource("CompressedTexture2D_8p05u")
 }],
 "loop": true,
 "name": &"falling",
@@ -19,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_e41v5")
+"texture": SubResource("CompressedTexture2D_eo61r")
 }],
 "loop": true,
 "name": &"idle",
@@ -27,7 +37,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_xxarj")
+"texture": SubResource("CompressedTexture2D_mxepk")
 }],
 "loop": true,
 "name": &"jump",
@@ -35,10 +45,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mxepk")
+"texture": SubResource("CompressedTexture2D_e41v5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ca0mu")
+"texture": SubResource("CompressedTexture2D_ca0mu")
 }],
 "loop": true,
 "name": &"run",
