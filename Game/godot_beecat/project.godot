@@ -13,13 +13,18 @@ config_version=5
 config/name="Godot_Beecat"
 run/main_scene="uid://d0svqrdftreet"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/borderless=true
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [input]
 

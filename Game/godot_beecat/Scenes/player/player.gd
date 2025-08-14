@@ -9,7 +9,7 @@ const GRAVITY_MULTIPLIER = 2.0
 @export var jump_height:float = 50
 
 var jump_velocity:float
-var bonus_jumps:int = 0
+var bonus_jumps:int = 1 
 var jumps_left:int
 
 var jump_buffer_time: float = 0.1
@@ -84,12 +84,12 @@ func can_jump() -> bool:
 	if is_on_floor():
 		return true
 	elif coyote_timer > 0:
-		print("Coyote time!")
+		print("Coyote time! Jumps left: " + str(jumps_left))
 		coyote_timer = -1
 		return true
 	elif jumps_left > 0:
-		print("Jumps left: " + str(jumps_left))
 		jumps_left -= 1
+		print("Jumps left: " + str(jumps_left))
 		return true
 	elif jump_buffer_timer <= 0:
 		jump_buffer_timer = jump_buffer_time
