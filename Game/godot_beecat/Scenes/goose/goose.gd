@@ -33,19 +33,24 @@ func check_target_pos():
 
 func hunt_target():
 	if !hunting: return
-	
 	if hunting_direction == 0:
 		goose_sprite.play("bark")
 		velocity.x = move_toward(velocity.x, 0, 2)
 	else:
-		goose_sprite.play("run")
+		if (velocity.x > 0 and hunting_direction == -1) or (velocity.x < 0 and hunting_direction == 1):
+			goose_sprite.play("sliding")
+			if velocity.x < 0:
+				goose_sprite.flip_h = true
+			else:
+				goose_sprite.flip_h = false
+		else:
+			goose_sprite.play("run")
 		velocity.x = move_toward(velocity.x, move_speed * hunting_direction, 10)
 	
 	move_and_slide()
 
 func _on_threat_area_body_entered(body: Node2D) -> void:
 	target.fear()
-
 
 func _on_fight_area_body_entered(body: Node2D) -> void:
 	hunting = false
