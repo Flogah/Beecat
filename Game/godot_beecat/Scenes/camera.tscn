@@ -2,10 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ltlnb01tibf5" path="res://Scenes/camera_2d.gd" id="1_375tr"]
 
-[node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("target", "zoom_area_node")]
-zoom = Vector2(1.5, 1.5)
-limit_bottom = 100
+[node name="Camera2D" type="Camera2D"]
+zoom = Vector2(1.2, 1.2)
 script = ExtResource("1_375tr")
-target = NodePath("")
 move_speed = 0.02
-zoom_area_node = NodePath("")
