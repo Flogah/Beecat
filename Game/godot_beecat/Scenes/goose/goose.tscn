@@ -70,7 +70,7 @@ size = Vector2(186, 55)
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6lew"]
 radius = 38.3275
 
-[node name="Goose" type="CharacterBody2D"]
+[node name="Goose" type="CharacterBody2D" groups=["goose"]]
 script = ExtResource("1_c6lew")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -80,9 +80,9 @@ shape = SubResource("RectangleShape2D_rnep4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_3ihge")
-animation = &"fight"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.449184
+frame_progress = 0.00513793
 
 [node name="ThreatArea" type="Area2D" parent="."]
 collision_layer = 0

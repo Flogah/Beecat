@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bis2fo7d6fwi2" path="res://assets/art/sketch/pixel_refsquare.png" id="1_rsyfn"]
 [ext_resource type="PackedScene" uid="uid://1u0yeuryqvex" path="res://Scenes/player/player.tscn" id="2_dtjkg"]
 [ext_resource type="PackedScene" uid="uid://bwhyg0t243p46" path="res://Scenes/greyboxing_layer.tscn" id="2_xq3o0"]
-[ext_resource type="PackedScene" uid="uid://dqkts7jgxlcrb" path="res://Scenes/Goose/goose.tscn" id="3_xq3o0"]
+[ext_resource type="PackedScene" uid="uid://dqkts7jgxlcrb" path="res://Scenes/goose/goose.tscn" id="3_xq3o0"]
 [ext_resource type="PackedScene" uid="uid://dd7vqd2f52l1v" path="res://Scenes/witch.tscn" id="8_8v7by"]
 [ext_resource type="PackedScene" uid="uid://ysfr3mmpn8kw" path="res://Scenes/camera.tscn" id="10_1rqgg"]
 [ext_resource type="PackedScene" uid="uid://bsulxqoqvur8v" path="res://Scenes/small_space.tscn" id="16_x6ft1"]
@@ -65,7 +65,7 @@ position = Vector2(682, 0)
 [node name="Witch" parent="." instance=ExtResource("8_8v7by")]
 position = Vector2(409, -314)
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_dtjkg")]
+[node name="Player" parent="." instance=ExtResource("2_dtjkg")]
 position = Vector2(689, -415)
 jump_height = 100.0
 

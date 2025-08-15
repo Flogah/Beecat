@@ -10,7 +10,7 @@ var zoom_in = false
 @export var target: Node
 @export_range(0.01, .1, 0.01) var move_speed:float = 0.05
 @export var zoom_area_node:Node2D
-@export_range(1.0, 2.5, .1) var zoom_level:float = 1.5
+@export_range(1.0, 2.5, .1) var zoom_level:float = 1.0
 
 func _ready() -> void:
 	for area in zoom_area_node.get_children():
