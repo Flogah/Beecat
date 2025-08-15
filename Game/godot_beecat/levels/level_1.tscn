@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://b73qyd5cqtt7a"]
+[gd_scene load_steps=32 format=4 uid="uid://b73qyd5cqtt7a"]
 
 [ext_resource type="PackedScene" uid="uid://clk1vox724dos" path="res://Scenes/far_background.tscn" id="1_bt44k"]
 [ext_resource type="Texture2D" uid="uid://bcwe1yir64xi3" path="res://assets/art/background/tree1.png" id="2_betor"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dax4e81t8b4cu" path="res://Scenes/platforms/platform_sw.tscn" id="15_voubc"]
 [ext_resource type="PackedScene" uid="uid://cbtvnx5gxnj7m" path="res://Scenes/platforms/platform_lw.tscn" id="16_0x1rk"]
 [ext_resource type="Texture2D" uid="uid://4nyin7n0q041" path="res://assets/art/background/wall_mushrooms.png" id="18_pnpm1"]
+[ext_resource type="FontFile" uid="uid://n3bcwdb8oi30" path="res://assets/fonts/ari-w9500-condensed-bold.ttf" id="25_0fu15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l53as"]
 size = Vector2(135, 79)
@@ -65,6 +66,15 @@ texture = ExtResource("2_betor")
 position = Vector2(611, 412)
 texture = ExtResource("2_betor")
 
+[node name="Tree19" type="Sprite2D" parent="Middleground/TreesBack"]
+position = Vector2(351, 205)
+texture = ExtResource("2_betor")
+
+[node name="Tree20" type="Sprite2D" parent="Middleground/TreesBack"]
+position = Vector2(105, 205)
+texture = ExtResource("2_betor")
+flip_h = true
+
 [node name="Tree3" type="Sprite2D" parent="Middleground/TreesBack"]
 position = Vector2(3756, 204)
 texture = ExtResource("2_betor")
@@ -96,7 +106,8 @@ scale = Vector2(2.9026, 2.9026)
 texture = ExtResource("2_betor")
 
 [node name="Tree13" type="Sprite2D" parent="Middleground/TreesBack"]
-position = Vector2(4085, 267)
+position = Vector2(4063, 300)
+scale = Vector2(0.733766, 0.733766)
 texture = ExtResource("2_betor")
 flip_h = true
 
@@ -115,7 +126,7 @@ texture = ExtResource("3_vjtdm")
 flip_h = true
 
 [node name="Tree18" type="Sprite2D" parent="Middleground/TreesBack"]
-position = Vector2(92, 205)
+position = Vector2(237, 241)
 texture = ExtResource("3_vjtdm")
 flip_h = true
 
@@ -198,6 +209,14 @@ position = Vector2(5468, 315)
 [node name="SwingShort" parent="Middleground/Platforms" instance=ExtResource("11_jkxa6")]
 position = Vector2(5468, 272)
 
+[node name="PlatformSW17" parent="Middleground/Platforms" instance=ExtResource("15_voubc")]
+position = Vector2(1231, 237)
+rotation = -1.57079
+
+[node name="PlatformSW18" parent="Middleground/Platforms" instance=ExtResource("15_voubc")]
+position = Vector2(1293, 236)
+rotation = 1.57079
+
 [node name="PlatformLL" parent="Middleground/Platforms" instance=ExtResource("13_0fu15")]
 position = Vector2(604, 297)
 
@@ -259,7 +278,7 @@ position = Vector2(796, -88)
 position = Vector2(846, 265)
 
 [node name="PlatformSL3" parent="Middleground/Platforms" instance=ExtResource("14_4knja")]
-position = Vector2(1137, 277)
+position = Vector2(1122, 277)
 
 [node name="PlatformSL21" parent="Middleground/Platforms" instance=ExtResource("14_4knja")]
 position = Vector2(1052, -59)
@@ -405,6 +424,10 @@ rotation = 1.57079
 position = Vector2(4171, 154)
 rotation = 1.57079
 
+[node name="PlatformLW28" parent="Middleground/Platforms" instance=ExtResource("16_0x1rk")]
+position = Vector2(4158, 252)
+rotation = 1.9548
+
 [node name="PlatformLW21" parent="Middleground/Platforms" instance=ExtResource("16_0x1rk")]
 position = Vector2(4428, 90)
 rotation = 1.57079
@@ -479,9 +502,10 @@ rotation = -4.71238
 
 [node name="Log2" parent="Middleground" instance=ExtResource("3_08mmt")]
 position = Vector2(2796, 359)
+destruction_time = 60.0
 
 [node name="Log4" parent="Middleground" instance=ExtResource("3_08mmt")]
-position = Vector2(980, 359)
+position = Vector2(966, 359)
 
 [node name="Log3" parent="Middleground" instance=ExtResource("3_08mmt")]
 position = Vector2(4027, 359)
@@ -495,7 +519,7 @@ position = Vector2(844.5, 328.5)
 shape = SubResource("RectangleShape2D_l53as")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Middleground/SmallSpaces/smallSpace"]
-position = Vector2(979, 342.5)
+position = Vector2(965, 342.5)
 shape = SubResource("RectangleShape2D_ntdhj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Middleground/SmallSpaces/smallSpace"]
@@ -538,9 +562,85 @@ flip_h = true
 
 [node name="Goose" parent="Middleground" instance=ExtResource("7_l53as")]
 position = Vector2(1749, 359)
+collision_layer = 1
+collision_mask = 1
 
 [node name="GooseActivator" parent="Middleground" instance=ExtResource("8_3sk1a")]
 position = Vector2(1913, 237)
+
+[node name="Labels" type="Node2D" parent="Middleground"]
+
+[node name="Label" type="Label" parent="Middleground/Labels"]
+offset_left = 170.0
+offset_top = 214.0
+offset_right = 331.0
+offset_bottom = 237.0
+theme_override_fonts/font = ExtResource("25_0fu15")
+text = "Use A and D to move"
+
+[node name="Label2" type="Label" parent="Middleground/Labels"]
+offset_left = 412.0
+offset_top = 215.0
+offset_right = 573.0
+offset_bottom = 238.0
+theme_override_fonts/font = ExtResource("25_0fu15")
+text = "SPACE to jump"
+
+[node name="Label3" type="Label" parent="Middleground/Labels"]
+offset_left = 631.0
+offset_top = 169.0
+offset_right = 792.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("25_0fu15")
+text = "You can jump twice!"
+
+[node name="Label5" type="Label" parent="Middleground/Labels"]
+offset_left = 1048.0
+offset_top = 246.0
+offset_right = 1209.0
+offset_bottom = 269.0
+theme_override_fonts/font = ExtResource("25_0fu15")
+text = "It is Summerween!"
+
+[node name="Label6" type="Label" parent="Middleground/Labels"]
+offset_left = 1306.0
+offset_top = 39.0
+offset_right = 1531.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("25_0fu15")
+text = "That means we must find candy"
+
+[node name="Label7" type="Label" parent="Middleground/Labels"]
+offset_left = 1655.0
+offset_top = 184.0
+offset_right = 2013.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("25_0fu15")
+text = "Careful! This candy already belonges to someone!"
+
+[node name="Label8" type="Label" parent="Middleground/Labels"]
+offset_left = 2845.0
+offset_top = 376.0
+offset_right = 3203.0
+offset_bottom = 399.0
+theme_override_fonts/font = ExtResource("25_0fu15")
+text = "Safe for now, but we need more candy"
+
+[node name="Label9" type="Label" parent="Middleground/Labels"]
+offset_left = 4412.0
+offset_top = -28.0
+offset_right = 4770.0
+offset_bottom = -5.0
+theme_override_fonts/font = ExtResource("25_0fu15")
+text = "Somebody here must have candy!"
+
+[node name="Label4" type="Label" parent="Middleground/Labels"]
+offset_left = 801.0
+offset_top = 286.0
+offset_right = 962.0
+offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("25_0fu15")
+text = "S to descend"
 
 [node name="Player" parent="Middleground" instance=ExtResource("2_kx6l7")]
 position = Vector2(240, 280)

@@ -7,6 +7,7 @@ var hunting_deadzone_radius:float = 40
 var move_speed:float = 300
 
 @onready var goose_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var loss_label: Label = $LossLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -54,3 +55,4 @@ func _on_fight_area_body_entered(body: Node2D) -> void:
 	target.disable()
 	target.visible = false
 	goose_sprite.play("fight")
+	loss_label.visible = true
