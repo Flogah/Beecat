@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://1u0yeuryqvex"]
+[gd_scene load_steps=10 format=3 uid="uid://1u0yeuryqvex"]
 
 [ext_resource type="Script" uid="uid://cbp07give27kv" path="res://Scenes/player/player.gd" id="1_eo61r"]
+[ext_resource type="Texture2D" uid="uid://du1k0q1766ed4" path="res://assets/art/cat/cat_scared.png" id="2_eo61r"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8p05u"]
 load_path = "res://.godot/imported/cat_falls.png-9d3746bdb6d5ee4a77b08be860b9782f.ctex"
@@ -25,6 +26,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eo61r")
+}],
+"loop": true,
+"name": &"fear",
 "speed": 5.0
 }, {
 "frames": [{
@@ -66,9 +75,12 @@ script = ExtResource("1_eo61r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -15)
 sprite_frames = SubResource("SpriteFrames_ca0mu")
-animation = &"run"
-frame_progress = 0.531534
+animation = &"fear"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_eo61r")
+
+[node name="FearTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FearTimer" to="." method="_on_fear_timer_timeout"]

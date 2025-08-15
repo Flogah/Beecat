@@ -5,7 +5,7 @@ var follow_player:bool
 var camera_offset:Vector2 = Vector2(0, -20)
 
 var small_zoom = 2.5
-var big_zoom = 1.5
+var big_zoom = 1.2
 var zoom_speed = .02
 var zoom_in = false
 

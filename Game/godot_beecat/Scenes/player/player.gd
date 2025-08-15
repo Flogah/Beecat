@@ -17,6 +17,7 @@ var coyote_timer:float = -1
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var gravity :Vector2 = Vector2(0, ProjectSettings.get_setting("physics/2d/default_gravity"))
+@onready var fear_timer: Timer = $FearTimer
 
 func _ready() -> void:
 	set_collision_mask_value(3, true) #for one way platforms
@@ -35,6 +36,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
+	move_and_slide()
 
 func handle_movement(delta):
 	if !can_move: return
@@ -74,8 +76,6 @@ func handle_movement(delta):
 		if jump_buffer_timer > 0:
 			jump()
 			jump_buffer_timer = -1
-	
-	move_and_slide()
 
 func jump() -> void:
 	if jump_check(): velocity.y = jump_velocity
@@ -100,7 +100,23 @@ func jump_check() -> bool:
 	return false
 
 func victory():
+	disable()
+	sprite.play("idle")
+
+func fear():
+	disable()
+	fear_timer.start()
+	sprite.play("fear")
+
+func _on_fear_timer_timeout() -> void:
+	reset()
+
+func disable():
 	can_jump = false
 	can_move = false
-	velocity = Vector2.ZERO
+	velocity.x = 0
+
+func reset():
+	can_jump = true
+	can_move = true
 	sprite.play("idle")
