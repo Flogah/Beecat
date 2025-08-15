@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 
 @onready var witch_sprite: AnimatedSprite2D = $AnimatedSprite2D
 

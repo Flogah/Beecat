@@ -115,6 +115,7 @@ func disable():
 	can_jump = false
 	can_move = false
 	velocity.x = 0
+	velocity.y = gravity.y
 
 func reset():
 	can_jump = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dd7vqd2f52l1v"]
+[gd_scene load_steps=12 format=3 uid="uid://dd7vqd2f52l1v"]
 
 [ext_resource type="Script" uid="uid://018643xj4bxl" path="res://Scenes/witch.gd" id="1_hjh8c"]
 [ext_resource type="Texture2D" uid="uid://daqenq3dxca7a" path="res://assets/art/witch/witch_candy.png" id="2_p42pi"]
+[ext_resource type="Texture2D" uid="uid://dn8eep7mhjf2n" path="res://assets/art/witch/witch_window.png" id="2_whpry"]
 [ext_resource type="Texture2D" uid="uid://hbbrmrk8kv8g" path="res://assets/art/witch/witch_sits.png" id="3_whpry"]
 [ext_resource type="Texture2D" uid="uid://c80xkceouaf41" path="res://assets/art/witch/witch_blink.png" id="4_l7v3h"]
 [ext_resource type="Texture2D" uid="uid://b3iib0tmo808e" path="res://assets/art/witch/witch_wave1.png" id="5_w358o"]
@@ -49,8 +50,15 @@ size = Vector2(28, 40)
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjh8c"]
 radius = 158.003
 
-[node name="Witch" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p42pi"]
+size = Vector2(55, 12)
+
+[node name="Witch" type="StaticBody2D"]
 script = ExtResource("1_hjh8c")
+
+[node name="WitchWindow" type="Sprite2D" parent="."]
+position = Vector2(7, 10)
+texture = ExtResource("2_whpry")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2yvf5")
@@ -72,6 +80,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WavingArea"]
 position = Vector2(6, 0)
 shape = SubResource("CircleShape2D_hjh8c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, 35)
+shape = SubResource("RectangleShape2D_p42pi")
+one_way_collision = true
 
 [connection signal="body_entered" from="CandyArea" to="." method="_on_candy_area_body_entered"]
 [connection signal="body_entered" from="WavingArea" to="." method="_on_waving_area_body_entered"]

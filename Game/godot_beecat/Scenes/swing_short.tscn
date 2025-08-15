@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqpgy6injjsbl"]
+[gd_scene load_steps=3 format=3 uid="uid://bqpgy6injjsbl"]
 
 [ext_resource type="Texture2D" uid="uid://ddytmnp0r4u57" path="res://assets/art/background/swings_sit.png" id="2_0fytg"]
-[ext_resource type="Texture2D" uid="uid://b7h7uws0apeu0" path="res://assets/art/background/swings_middle.png" id="2_fwhcf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_770hb"]
 size = Vector2(54, 7)
@@ -16,7 +15,3 @@ texture = ExtResource("2_0fytg")
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_770hb")
 one_way_collision = true
-
-[node name="SwingsMiddle" type="Sprite2D" parent="."]
-position = Vector2(0, -30)
-texture = ExtResource("2_fwhcf")

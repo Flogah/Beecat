@@ -71,6 +71,8 @@ size = Vector2(186, 55)
 radius = 38.3275
 
 [node name="Goose" type="CharacterBody2D" groups=["goose"]]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_c6lew")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

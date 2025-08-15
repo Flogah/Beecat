@@ -30,7 +30,3 @@ one_way_collision = true
 position = Vector2(27, -146.5)
 shape = SubResource("RectangleShape2D_mvaxn")
 one_way_collision = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-93, -193, -3, -291, 88, -193, 70, -190, -3, -273, -70, -194)
-one_way_collision = true
