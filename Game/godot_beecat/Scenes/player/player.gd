@@ -8,7 +8,7 @@ const GRAVITY_MULTIPLIER = 2.0
 var can_move:bool = true
 var can_jump:bool = true
 var jump_velocity:float
-var bonus_jumps:int = 1 
+@export var bonus_jumps:int = 1 
 var jumps_left:int
 var jump_buffer_time: float = 0.1
 var jump_buffer_timer: float = -1

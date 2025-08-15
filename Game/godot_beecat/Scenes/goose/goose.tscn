@@ -82,7 +82,7 @@ position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_3ihge")
 animation = &"fight"
 autoplay = "idle"
-frame_progress = 0.572158
+frame_progress = 0.449184
 
 [node name="ThreatArea" type="Area2D" parent="."]
 collision_layer = 0

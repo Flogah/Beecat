@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpmpx7re2y1rp"]
+
+[ext_resource type="Texture2D" uid="uid://csdicgnwphstx" path="res://assets/art/foreground/bg_grass1.png" id="1_3ls55"]
+[ext_resource type="Texture2D" uid="uid://camjg0swj635d" path="res://assets/art/foreground/bg_grass2.png" id="2_lllli"]
+[ext_resource type="Texture2D" uid="uid://lii0y5stagaj" path="res://assets/art/foreground/bg_watermelon2.png" id="3_r61t3"]
+[ext_resource type="Texture2D" uid="uid://dkvj7s2wah4u" path="res://assets/art/foreground/bg_sticks2.png" id="4_0q88m"]
+
+[node name="Foreground" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.1, 1)
+repeat_size = Vector2(100, 0)
+repeat_times = 8
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D"]
+offset_left = 266.0
+offset_top = 356.5
+offset_right = 373.0
+offset_bottom = 707.5
+color = Color(0, 0, 0, 1)
+
+[node name="BgGrass1" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(293, 354.5)
+texture = ExtResource("1_3ls55")
+
+[node name="BgGrass2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(346, 354.5)
+texture = ExtResource("2_lllli")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.2, 1)
+repeat_size = Vector2(300, 0)
+repeat_times = 5
+
+[node name="BgWatermelon2" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(179, 340)
+texture = ExtResource("3_r61t3")
+
+[node name="BgSticks2" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(123, 342)
+texture = ExtResource("4_0q88m")
+
+[node name="BgSticks3" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(123, 330)
+texture = ExtResource("4_0q88m")
+flip_h = true
+
+[node name="BgSticks4" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(282, 354)
+rotation = 0.3855
+texture = ExtResource("4_0q88m")
+flip_h = true
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.3, 1)
+repeat_size = Vector2(600, 0)
+repeat_times = 2
+
+[node name="BgSticks3" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(178.284, 252)
+texture = ExtResource("4_0q88m")
+flip_h = true
+
+[node name="BgSticks5" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(219.54, 276.256)
+rotation = 0.740541
+texture = ExtResource("4_0q88m")
+
+[node name="BgSticks6" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(217.284, 302)
+rotation = 0.740541
+texture = ExtResource("4_0q88m")
+flip_h = true
+
+[node name="BgSticks7" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(141.284, 291)
+rotation = -0.788642
+texture = ExtResource("4_0q88m")
+
+[node name="BgSticks9" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(168, 252)
+rotation = -0.261021
+texture = ExtResource("4_0q88m")
+
+[node name="BgSticks8" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(206.284, 259)
+rotation = -0.114012
+texture = ExtResource("4_0q88m")
+
+[node name="BgSticks4" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(178.284, 315)
+rotation = 0.0909149
+scale = Vector2(2.54373, 2.54373)
+texture = ExtResource("4_0q88m")
+flip_h = true
+
+[node name="BgWatermelon2" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(311, 338)
+texture = ExtResource("3_r61t3")
