@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cksinayq1arej"]
+
+[ext_resource type="Script" uid="uid://0injfjmp5pli" path="res://Scenes/goose/goose_activator.gd" id="1_6hebw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pt5x1"]
+size = Vector2(30, 34)
+
+[node name="GooseActivator" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_6hebw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pt5x1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

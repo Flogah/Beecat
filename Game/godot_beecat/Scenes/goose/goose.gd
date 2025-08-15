@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
-var framecount:int = 0
-
-var hunting:bool = true
+var hunting:bool = false
 var target
 var hunting_direction:int = 0
 var hunting_deadzone_radius:float = 40
@@ -16,7 +14,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	framecount += 1
 	check_target_pos()
 	hunt_target()
 

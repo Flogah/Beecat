@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyf6vchcxxuwk"]
+
+[ext_resource type="Texture2D" uid="uid://dkmj0gc1ngkhl" path="res://assets/art/background/house1.png" id="1_fhddl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bisf"]
+size = Vector2(35, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvaxn"]
+size = Vector2(41.5, 11)
+
+[node name="House1" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="House1" type="Sprite2D" parent="."]
+position = Vector2(-1, -155)
+texture = ExtResource("1_fhddl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24.5, -48)
+shape = SubResource("RectangleShape2D_0bisf")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-25.75, -146.5)
+shape = SubResource("RectangleShape2D_mvaxn")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(27, -146.5)
+shape = SubResource("RectangleShape2D_mvaxn")
+one_way_collision = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-93, -193, -3, -291, 88, -193, 70, -190, -3, -273, -70, -194)
+one_way_collision = true

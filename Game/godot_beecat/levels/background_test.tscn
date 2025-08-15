@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://buajiod0o4aho"]
+[gd_scene load_steps=20 format=4 uid="uid://buajiod0o4aho"]
 
 [ext_resource type="PackedScene" uid="uid://bwhyg0t243p46" path="res://Scenes/greyboxing_layer.tscn" id="1_ft0hh"]
 [ext_resource type="PackedScene" uid="uid://clk1vox724dos" path="res://Scenes/far_background.tscn" id="1_uwhad"]
@@ -13,6 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://ddytmnp0r4u57" path="res://assets/art/background/swings_sit.png" id="7_wndk1"]
 [ext_resource type="Texture2D" uid="uid://4nyin7n0q041" path="res://assets/art/background/wall_mushrooms.png" id="8_2uwyv"]
 [ext_resource type="Texture2D" uid="uid://crut5xrlds5u1" path="res://assets/art/background/bg_treehouse.png" id="9_iugp4"]
+[ext_resource type="FontFile" uid="uid://bxwqntq1lomku" path="res://assets/fonts/ari-w9500-display.ttf" id="14_6ql07"]
+[ext_resource type="FontFile" uid="uid://b37ajxi7sd616" path="res://assets/fonts/ari-w9500-condensed-display.ttf" id="15_2uwyv"]
+[ext_resource type="FontFile" uid="uid://cwh0dnm6cm4dq" path="res://assets/fonts/ari-w9500.ttf" id="15_nbj18"]
+[ext_resource type="FontFile" uid="uid://bvga7fjnipaty" path="res://assets/fonts/ari-w9500-condensed.ttf" id="17_iugp4"]
+[ext_resource type="FontFile" uid="uid://p3md7sajp1fq" path="res://assets/fonts/ari-w9500-bold.ttf" id="18_pxucs"]
+[ext_resource type="FontFile" uid="uid://n3bcwdb8oi30" path="res://assets/fonts/ari-w9500-condensed-bold.ttf" id="19_nbprf"]
 
 [node name="BackgroundTest" type="Node2D"]
 
@@ -72,10 +78,56 @@ position = Vector2(-1, -16)
 
 [node name="Camera2D" parent="Midground" node_paths=PackedStringArray("zoom_area_node") instance=ExtResource("2_rtxpp")]
 position = Vector2(-1, -113)
-zoom = Vector2(1, 1)
 zoom_area_node = NodePath("../Node2D")
-zoom_level = 1.0
 
 [node name="Node2D" type="Node2D" parent="Midground"]
 
 [node name="Foreground" parent="." instance=ExtResource("5_5jkpy")]
+
+[node name="Display" type="Label" parent="."]
+offset_left = -234.0
+offset_top = 183.0
+offset_right = 12.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("14_6ql07")
+text = "This is a test of the writing"
+
+[node name="Display2" type="Label" parent="."]
+offset_left = -229.0
+offset_top = 288.0
+offset_right = 17.0
+offset_bottom = 311.0
+theme_override_fonts/font = ExtResource("15_2uwyv")
+text = "This is a test of the writing"
+
+[node name="Regular" type="Label" parent="."]
+offset_left = -209.0
+offset_top = 221.0
+offset_right = -5.0
+offset_bottom = 244.0
+theme_override_fonts/font = ExtResource("15_nbj18")
+text = "This is a test of the writing"
+
+[node name="Regular2" type="Label" parent="."]
+offset_left = -197.0
+offset_top = 241.0
+offset_right = 7.0
+offset_bottom = 264.0
+theme_override_fonts/font = ExtResource("17_iugp4")
+text = "This is a test of the writing"
+
+[node name="Bold" type="Label" parent="."]
+offset_left = -222.0
+offset_top = 201.0
+offset_right = -4.0
+offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("18_pxucs")
+text = "This is a test of the writing"
+
+[node name="Bold2" type="Label" parent="."]
+offset_left = -217.0
+offset_top = 267.0
+offset_right = 8.0
+offset_bottom = 290.0
+theme_override_fonts/font = ExtResource("19_nbprf")
+text = "This is a test of the writing"

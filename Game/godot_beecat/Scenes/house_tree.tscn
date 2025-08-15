@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://det6kvqyeebmt"]
+
+[ext_resource type="Texture2D" uid="uid://crut5xrlds5u1" path="res://assets/art/background/bg_treehouse.png" id="1_txdek"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8ig5"]
+size = Vector2(144, 4)
+
+[node name="HouseTree" type="StaticBody2D"]
+
+[node name="BgTreehouse" type="Sprite2D" parent="."]
+position = Vector2(0, -63)
+texture = ExtResource("1_txdek")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d8ig5")
