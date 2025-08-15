@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dax4e81t8b4cu"]
+
+[ext_resource type="Texture2D" uid="uid://kajage0dtulv" path="res://assets/art/platforms/wood_plank60.png" id="1_tuoft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mwpp"]
+size = Vector2(61, 13)
+
+[node name="PlatformSW" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="LeafPlank60" type="Sprite2D" parent="."]
+position = Vector2(1.5, 5.5)
+texture = ExtResource("1_tuoft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_7mwpp")
+one_way_collision = true
