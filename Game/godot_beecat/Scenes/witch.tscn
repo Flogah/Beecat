@@ -47,7 +47,7 @@ animations = [{
 size = Vector2(28, 40)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjh8c"]
-radius = 125.399
+radius = 158.003
 
 [node name="Witch" type="Node2D"]
 script = ExtResource("1_hjh8c")
@@ -70,7 +70,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WavingArea"]
-position = Vector2(6, 9)
+position = Vector2(6, 0)
 shape = SubResource("CircleShape2D_hjh8c")
 
 [connection signal="body_entered" from="CandyArea" to="." method="_on_candy_area_body_entered"]
