@@ -149,10 +149,10 @@ position = Vector2(1749, 359)
 position = Vector2(1913, 237)
 
 [node name="Player" parent="Middleground" instance=ExtResource("2_kx6l7")]
-position = Vector2(224, 289)
+position = Vector2(1817.91, 170.782)
 
 [node name="Camera2D" parent="Middleground" node_paths=PackedStringArray("target", "zoom_area_node") instance=ExtResource("3_n46q3")]
-position = Vector2(224, 289)
+position = Vector2(1817.91, 170.782)
 target = NodePath("../Player")
 zoom_area_node = NodePath("../SmallSpaces")
 
