@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot_Beecat"
-run/main_scene="uid://d0svqrdftreet"
+run/main_scene="uid://b73qyd5cqtt7a"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/show_image=false
 boot_splash/fullsize=false
